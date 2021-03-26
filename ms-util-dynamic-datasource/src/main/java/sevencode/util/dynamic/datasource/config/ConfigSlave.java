@@ -15,14 +15,13 @@ import org.springframework.context.annotation.Configuration;
 @SuppressWarnings("ALL")
 @Configuration
 @Data
-public class ConfigMaster {
-    @Value("${spring.datasource.dynamic.datasource.master.url}")
+public class ConfigSlave {
+    @Value("${spring.datasource.dynamic.datasource.slave.url}")
     private String url;
-    @Value("${spring.datasource.dynamic.datasource.master.username}")
+    @Value("${spring.datasource.dynamic.datasource.slave.username}")
     private String username;
-    @Value("${spring.datasource.dynamic.datasource.master.password}")
+    @Value("${spring.datasource.dynamic.datasource.slave.password}")
     private String password;
-    @Value("${spring.datasource.dynamic.datasource.master.driver-class-name}")
+    @Value("${spring.datasource.dynamic.datasource.slave.driver-class-name}")
     private String driverClassName;
-
 }
