@@ -33,7 +33,6 @@ metastore_db
 *.iws
 *.idea
 *.log
-*.yml
 # main class
 MetaDataApplication.java
 DataSecurityApplication.java
