@@ -1,0 +1,55 @@
+# Created by .ignore support plugin (hsz.mobi)
+#.gitignore
+
+# Operating System Files
+
+*.DS_Store
+Thumbs.db
+*.sw?
+.#*
+*#
+*~
+*.sublime-*
+
+# Build Artifacts
+
+.gradle/
+build/
+target/
+bin/
+dependency-reduced-pom.xml
+metastore_db
+
+# Eclipse Project Files
+
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA Files
+
+*.iml
+*.ipr
+*.iws
+*.idea
+*.log
+*.yml
+# main class
+MetaDataApplication.java
+DataSecurityApplication.java
+DataQualityApplication.java
+DataAssetApplication.java
+DataOpenApplication.java
+UserManageApplication.java
+AppManageApplication.java
+<<<<<<< HEAD
+=======
+FZApplication.java
+VSApplication.java
+
+>>>>>>> 9423cef7186566e63be506e88db6c3a066eb8f92
+# word 缓存
+~$*
+
+# uploads
+uploads/
