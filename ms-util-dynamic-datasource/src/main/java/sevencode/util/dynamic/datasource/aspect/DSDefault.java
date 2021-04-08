@@ -1,4 +1,4 @@
-package sevencode.util.dynamic.datasource;
+package sevencode.util.dynamic.datasource.aspect;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import sevencode.util.dynamic.datasource.config.ConfigMaster;
+import sevencode.util.dynamic.datasource.util.DSPoolUtilDefault;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +23,7 @@ import java.util.Map;
 @SuppressWarnings("ALL")
 @Configuration
 @Component
-public class DSMaster {
+public class DSDefault {
     private final String driverClass = DSParams.DRIVER_CJ_CLASS;
     @Autowired
     private ConfigMaster configMaster;
@@ -35,15 +36,12 @@ public class DSMaster {
      *******************************************************/
     @Bean(name = "master")
     public DataSource masterDataSource() {
-        DataSource dataSource = DSPoolUtilSlave.getPoolProperties(
+        DataSource dataSource = DSPoolUtilDefault.getPoolProperties(
                 configMaster.getUrl(),
                 configMaster.getUsername(),
                 configMaster.getPassword());
         return dataSource;
     }
-    //自动装配时当出现多个Bean候选者时 被注解为@Primary的Bean将作为首选者 否则将抛出异常
-    //这个就是重写了datasource的默认切换路由器,底层源码有显示 数据源是存在一个map中 所以这里我们
-    //也给它赋值我们自己的默认数据源
 
     /******************************************************
      * @Description : 自动装配时当出现多个Bean候选者时
@@ -52,15 +50,15 @@ public class DSMaster {
      * @Date : 2021/3/26 11:30
      *******************************************************/
     @Primary
-    @Bean(name = "dynamicDS")
+    @Bean(name = "defaultDS")
     public RoutingDSByUser RouteDataSource() throws Exception {
-        RoutingDSByUser dynamicDS = new RoutingDSByUser();
+        RoutingDSByUser defaultDS = new RoutingDSByUser();
         Map<Object, Object> targetDataSources = new HashMap<>();
         targetDataSources.put("master", masterDataSource());
         //将map中我们创建的默认数据源赋值
-        dynamicDS.setTargetDataSources(targetDataSources);
+        defaultDS.setTargetDataSources(targetDataSources);
         //以该默认数据源为默认访问数据库的链接使用
-        dynamicDS.setDefaultTargetDataSource(masterDataSource());
-        return dynamicDS;
+        defaultDS.setDefaultTargetDataSource(masterDataSource());
+        return defaultDS;
     }
 }

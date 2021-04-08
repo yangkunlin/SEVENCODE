@@ -10,13 +10,13 @@ spring:
       datasource:
         #为默认数据源起一个名字为 master
         master:
-          url: jdbc:mysql://10.10.101.66:13306/master?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+          url: jdbc:mysql://172.16.0.213:13306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
           username: root
-          password: mysql
+          password: 123456
           driver-class-name: com.mysql.jdbc.Driver
         #为从数据源起一个名字为 slave
         slave:
-          url: jdbc:mysql://192.168.110.45:3306/slave?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+          url: jdbc:mysql://172.16.0.213:23306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
           username: root
-          password: root
+          password: 123456
           driver-class-name: com.mysql.jdbc.Driver

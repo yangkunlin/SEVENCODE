@@ -1,9 +1,7 @@
-package sevencode.util.dynamic.datasource;
+package sevencode.util.dynamic.datasource.aspect;
 
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
-
-import javax.sql.DataSource;
 
 /***********************************************
  * @Author: Seven

@@ -1,4 +1,4 @@
-package sevencode.util.dynamic.datasource;
+package sevencode.util.dynamic.datasource.aspect;
 
 /***********************************************
  * @Author: Seven
@@ -12,4 +12,5 @@ package sevencode.util.dynamic.datasource;
 public interface DSParams {
     String DRIVER_CLASS = "com.mysql.jdbc.Driver";
     String DRIVER_CJ_CLASS = "com.mysql.cj.jdbc.Driver";
+    String IS_PRIVATE_DB = "1";
 }

@@ -1,5 +1,7 @@
-package sevencode.util.dynamic.datasource.test.entity;
+package sevencode.util.dynamic.datasource.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /***********************************************
@@ -12,11 +14,13 @@ import lombok.Data;
  **********************************************/
 @SuppressWarnings("ALL")
 @Data
+@TableName("tenement_info")
 public class TenementInfo {
+    //租户信息对应的用户ID
+    @TableId(value = "id")
+    private String id;
     //租户ID
     private String tenementId;
-    //租户对应的用户ID
-    private String UserId;
     //租户是否有私有数据库
     private String isPrivateDb;
     //私有数据库类型

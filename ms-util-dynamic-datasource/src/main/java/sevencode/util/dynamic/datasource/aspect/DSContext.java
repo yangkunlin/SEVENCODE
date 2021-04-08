@@ -1,4 +1,6 @@
-package sevencode.util.dynamic.datasource;
+package sevencode.util.dynamic.datasource.aspect;
+
+import org.springframework.stereotype.Component;
 
 /***********************************************
  * @Author: Seven
@@ -9,6 +11,7 @@ package sevencode.util.dynamic.datasource;
  * @Copyright 2020-2021 Comleader - Powered By 凌鉴项目组
  **********************************************/
 @SuppressWarnings("ALL")
+@Component
 public class DSContext {
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<>();
 

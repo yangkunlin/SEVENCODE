@@ -1,12 +1,13 @@
-package sevencode.util.dynamic.datasource;
+package sevencode.util.dynamic.datasource.util;
 
-import org.springframework.stereotype.Component;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
+import org.springframework.stereotype.Component;
+import sevencode.util.dynamic.datasource.aspect.DSParams;
 
 /***********************************************
  * @Author: Seven
- * @Date: 2021/3/26 11:34
+ * @Date: 2021/3/26 11:32
  * @Description:
  * @Modified:
  * @Version: 1.0.0
@@ -14,7 +15,7 @@ import org.apache.tomcat.jdbc.pool.PoolProperties;
  **********************************************/
 @SuppressWarnings("ALL")
 @Component
-public class DSPoolUtilSlave {
+public class DSPoolUtil {
     //连接池属性支持
     private static PoolProperties poolProperties = new PoolProperties();
     //驱动替换--
