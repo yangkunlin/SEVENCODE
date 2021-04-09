@@ -12,7 +12,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
  * @Copyright 2020-2021 Comleader - Powered By 凌鉴项目组
  **********************************************/
 @SuppressWarnings("ALL")
-public class RoutingDSByUser extends AbstractRoutingDataSource {
+public class DSRoutingByUser extends AbstractRoutingDataSource {
     /******************************************************
      * @Description : 根据当前线程内绑定的数据源进行动态切换
      * @Return : 当前线程内绑定的数据源

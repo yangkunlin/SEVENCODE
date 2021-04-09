@@ -44,7 +44,7 @@ public class DSAspect implements Ordered {
     //数据源动态选择器
     @Autowired
     @Qualifier(value = "defaultDS")
-    private RoutingDSByUser routingDSByUser;
+    private DSRoutingByUser dsRoutingByUser;
 
     /******************************************************
      * @Description : 指定以注解DSRoutingPrivate为切面
@@ -82,9 +82,9 @@ public class DSAspect implements Ordered {
             Map<Object, Object> dsMap = new HashMap<>();
             dsMap.put("private", dataSource);
             //放入路由选择器中
-            routingDSByUser.setTargetDataSources(dsMap);
+            dsRoutingByUser.setTargetDataSources(dsMap);
             //动态切换数据源 并手动注入私有库数据源
-            routingDSByUser.afterPropertiesSet();
+            dsRoutingByUser.afterPropertiesSet();
             dsContext.setDS("private");
         } else {
             dsContext.setDS("master");

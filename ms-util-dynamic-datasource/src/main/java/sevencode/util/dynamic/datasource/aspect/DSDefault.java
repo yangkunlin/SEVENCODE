@@ -51,8 +51,8 @@ public class DSDefault {
      *******************************************************/
     @Primary
     @Bean(name = "defaultDS")
-    public RoutingDSByUser RouteDataSource() throws Exception {
-        RoutingDSByUser defaultDS = new RoutingDSByUser();
+    public DSRoutingByUser RouteDataSource() throws Exception {
+        DSRoutingByUser defaultDS = new DSRoutingByUser();
         Map<Object, Object> targetDataSources = new HashMap<>();
         targetDataSources.put("master", masterDataSource());
         //将map中我们创建的默认数据源赋值
