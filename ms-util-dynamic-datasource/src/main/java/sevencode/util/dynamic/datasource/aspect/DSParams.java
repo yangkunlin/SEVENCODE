@@ -3,7 +3,7 @@ package sevencode.util.dynamic.datasource.aspect;
 /***********************************************
  * @Author: Seven
  * @Date: 2021/3/26 11:18
- * @Description:
+ * @Description: 数据源相关静态参数
  * @Modified:
  * @Version: 1.0.0
  * @Copyright 2020-2021 Comleader - Powered By 凌鉴项目组
